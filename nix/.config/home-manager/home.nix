@@ -79,6 +79,8 @@
     EDITOR = "vim"; # or your preferred editor
   };
 
+  home.sessionPath = [ "$HOME/.volta/bin" ];
+
   # Enable direnv integration
   programs.direnv = {
     enable = true;
