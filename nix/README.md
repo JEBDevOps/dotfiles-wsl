@@ -1,4 +1,10 @@
 
+# Install STOW
+
+```bash
+sudo apt install stow
+```
+
 # Install Nix
 
 ```bash
@@ -24,7 +30,10 @@ Here is the [flake.nix](.config/home-manager/flake.nix) file.
 nix run home-manager/master -- init --switch
 
 # Future updates
-home-manager switch --flake ~/.config/home-manager#dev
+#home-manager switch --flake ~/.config/home-manager#dev
+
+# Run directly from the repo directory
+home-manager switch --flake ~/dotfiles/nix/.config/home-manager#dev
 ```
 
 # Configure Home Manager
