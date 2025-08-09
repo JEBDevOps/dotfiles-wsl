@@ -30,8 +30,8 @@
     # Programming languages and package managers
     python3
     python3Packages.pip
-    #php83
-    #php83Packages.composer
+    php84
+    php84Packages.composer
     #nodejs_20  # Node.js for modern web development
 
     # Terminal and shell tools
@@ -114,6 +114,8 @@
       gc = "git commit";
       gp = "git push";
       gl = "git pull";
+
+      sail="sh $([ -f sail ] && echo sail || echo vendor/bin/sail)";
     };
     functions = {
       # Custom fish functions
@@ -160,6 +162,9 @@
       set fish_color_autosuggestion brblack
 
       set -gx VOLTA_HOME $HOME/.volta
+      fish_add_path $VOLTA_HOME/bin
+
+      set -gx COMPOSER_HOME $HOME/.config/composer/vendor
       fish_add_path $VOLTA_HOME/bin
     '';
   };
@@ -343,8 +348,13 @@
       alias gp="git push"
       alias gl="git pull"
 
+      alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
+
       export VOLTA_HOME="$HOME/.volta"
       export PATH="$VOLTA_HOME/bin:$PATH"
+
+      export COMPOSER_HOME="$HOME/.config/composer/vendor"
+      export PATH="$COMPOSER_HOME/bin:$PATH"
     '';
   };
 
