@@ -79,7 +79,7 @@
     EDITOR = "vim"; # or your preferred editor
   };
 
-  home.sessionPath = [ "$HOME/.volta/bin" ];
+  # home.sessionPath = [ "$HOME/.volta/bin" ];
 
   # Enable direnv integration
   programs.direnv = {
@@ -158,6 +158,9 @@
       set fish_color_operator brgreen
       set fish_color_quote green
       set fish_color_autosuggestion brblack
+
+      set -gx VOLTA_HOME $HOME/.volta
+      fish_add_path $VOLTA_HOME/bin
     '';
   };
 
@@ -182,6 +185,10 @@
       k = "kubectl";
       tf = "terraform";
     };
+    envFile.text = ''
+      $env.VOLTA_HOME = ([$nu.home-path ".volta"] | path join)
+      $env.PATH = [$"($env.VOLTA_HOME)/bin", ...$env.PATH]
+    '';
   };
 
   # Configure zoxide (smart cd)
@@ -335,6 +342,9 @@
       alias gc="git commit"
       alias gp="git push"
       alias gl="git pull"
+
+      export VOLTA_HOME="$HOME/.volta"
+      export PATH="$VOLTA_HOME/bin:$PATH"
     '';
   };
 
