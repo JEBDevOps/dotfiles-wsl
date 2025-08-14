@@ -70,6 +70,7 @@
     #neovim     # Modern vim
     micro      # Simple terminal editor
     starship   # Cross-shell prompt
+    minikube
 
     #(nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
