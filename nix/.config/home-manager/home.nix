@@ -30,6 +30,7 @@
     # Programming languages and package managers
     python3
     python3Packages.pip
+    uv
     php84
     php84Packages.composer
     #nodejs_20  # Node.js for modern web development
