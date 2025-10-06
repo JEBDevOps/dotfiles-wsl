@@ -167,7 +167,9 @@
       fish_add_path $VOLTA_HOME/bin
 
       set -gx COMPOSER_HOME $HOME/.config/composer/vendor
-      fish_add_path $VOLTA_HOME/bin
+      fish_add_path $COMPOSER_HOME/bin
+
+      fish_add_path "~/.local/bin"
     '';
   };
 
@@ -357,6 +359,8 @@
 
       export COMPOSER_HOME="$HOME/.config/composer/vendor"
       export PATH="$COMPOSER_HOME/bin:$PATH"
+
+      export PATH="~/.local/bin:$PATH"
     '';
   };
 
