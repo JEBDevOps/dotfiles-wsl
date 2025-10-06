@@ -169,7 +169,7 @@
       set -gx COMPOSER_HOME $HOME/.config/composer/vendor
       fish_add_path $COMPOSER_HOME/bin
 
-      fish_add_path "~/.local/bin"
+      fish_add_path ~/.local/bin
     '';
   };
 
