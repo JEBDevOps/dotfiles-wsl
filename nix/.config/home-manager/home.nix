@@ -23,6 +23,9 @@
     eksctl
     argocd
 
+    # Google Cloud SDK
+    google-cloud-sdk
+
     # Infrastructure as Code
     terraform
     helm
