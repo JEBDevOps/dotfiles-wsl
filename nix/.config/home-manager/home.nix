@@ -374,7 +374,7 @@
     settings = {
       user = {
         name = "justinAtBetrnk";
-        email = "j.belga@betrnk-cage.com"
+        email = "j.belga@betrnk-cage.com";
       };
       init = {
         defaultBranch = "main";
