@@ -371,15 +371,30 @@
   # Configure git (optional but recommended)
   programs.git = {
     enable = true;
-    userName = "DevRedempti";
-    userEmail = "dev.redempti@gmail.com";
-    extraConfig = {
-      init.defaultBranch = "main";
-      core.editor = "vim";
-      pull.rebase = false;
-      push.autoSetupRemote = true;
-    };
-    delta.enable = true;
+    settings = {
+      user = {
+        name = "justinAtBetrnk";
+        email = "j.belga@betrnk-cage.com"
+      };
+      init = {
+        defaultBranch = "main";
+      };
+      core = {
+        editor = "vim";
+      };
+      pull = {
+        rebase = false;
+      };
+      push = {
+        autoSetupRemote = true;
+      };
+    }
+  };
+
+  # Delta
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
   };
 
   programs.neovim.enable = true;
